@@ -14,10 +14,12 @@ export function findDoctor(symptoms, compile){
     const phoneNumbers = [];
     const websites = [];
     const availabilities = [];
+    let response = responses.data;
     console.log("symptoms is " + symptoms);
     console.log("xhr is " + xhr);
+    console.log(responses);
 
-    responses.forEach(function(response){
+    responses.data.forEach(function(response){
       names.push(response.data.practices.name);
       addresses.push(response.data.practices.visit_address.street + " " + response.data.practices.visit_address.street2 + " " + response.data.practices.visit_address.city + " " + response.data.practices.visit_address.state + " " + response.data.practices.visit_address.zip);
       //alternate addresses
