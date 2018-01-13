@@ -1,33 +1,34 @@
 import { findDoctor } from "./../dev/js/main-logic.js";
 
-$(document).ready(function(){
+$(document).ready(function() {
 
-  function render(names, addresses, phoneNumbers, websites, availabilities){
-    // clear the field
-    $("#results").text(`Test.`);
-    for (var i = 0; i < doctors.length; i++) {
-      let name = names[i];
-      let address = addresses[i];
-      let phoneNumber = phoneNumbers[i];
-      let website = websites[i];
-      let availability = availabilities[i];
-      let results = `<div class="result-item">
-        <h3>${name}</h3>
-        <p>${address}</p>
-        <p>${phoneNumber}</p>
-        <p>${website}</p>
-        <p>${availability}</p>
-      </div>`
-    }
 
-  // CLICK!
-  $("#submit-form").click(function(event){
+// compile looped information template to put up in #results
+function compile(names, addresses, phoneNumbers, websites, availabilities){
+
+  for (var i = 0; i < names.length; i++) {
+    let name = names[i];
+    let address = addresses[i];
+    let phoneNumber = phoneNumbers[i];
+    let website = websites[i];
+    let availability = availabilities[i];
+    let template = `<div class="item">
+      <h3>${name}</h3>
+      <p>${address}</p>
+      <p>${phoneNumber}</p>
+      <p>${website}</p>
+      <p>${availability}</p>
+    </div>`
+
+    $("#results").append(template);
+  }
+}
+
+
+  $("#submit-form").click(function(){
     event.preventDefault();
     let symptoms = $("#symptoms").val();
-    let doctorInput = $("#doctor-name").val();
-    findDoctor(symptoms);
-    // findDoctor(symptoms, doctorInput);
+
+    findDoctor(symptoms, compile);
   });
-
-
 });
