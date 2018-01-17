@@ -22,7 +22,7 @@
 #### _This webpage uses HTML, CSS, JS_
 
 ## Adjustments to be Made
-*
+* response.data keeps yielding 'undefined'...
 
 ## License
 Copyright (c) 2018, **_{Lena Ha}_**
