@@ -1,4 +1,4 @@
-var apiKey = require('./../../.env').apiKey;
+var apiKey = require('./.env').apiKey;
 
 export function findDoctor(symptoms, compile){
 
@@ -15,9 +15,8 @@ export function findDoctor(symptoms, compile){
     const websites = [];
     const availabilities = [];
     let response = responses.data;
-    console.log("symptoms is " + symptoms);
     console.log("xhr is " + xhr);
-    console.log(responses);
+    console.log(response);
 
     responses.data.forEach(function(response){
       names.push(response.data.practices.name);
@@ -29,10 +28,10 @@ export function findDoctor(symptoms, compile){
       availabilities.push(response.data.practices.accepts_new_patients);
     });
     console.log(names);
-    console.log(addresses);
-    console.log(phoneNumbers);
-    console.log(websites);
-    console.log(availabilities);
+    // console.log(addresses);
+    // console.log(phoneNumbers);
+    // console.log(websites);
+    // console.log(availabilities);
   });
 
   xhr.fail(function(){
