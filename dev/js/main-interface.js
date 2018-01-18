@@ -30,8 +30,8 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
     let symptoms = $("#symptoms").val();
 
     findDoctor(symptoms, compile);
+    // console.log(names.length);
     compile();
-    console.log(names.length);
     // compile(names, addresses, phoneNumbers, websites, availabilities);
   });
 });
