@@ -10,7 +10,7 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
     let name = names[i];
     let address = addresses[i];
     let phoneNumber = phoneNumbers[i];
-    // let website = websites[i];
+    let website = websites[i];
     let availability = availabilities[i];
     let template = `<div class="item">
       <h3>${name}</h3>
@@ -28,7 +28,7 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
 
   $("#submit-form").click(function(){
     event.preventDefault();
-    let symptoms = $("#symptoms").val();
+    const symptoms = $("#symptoms").val();
 
     findDoctor(symptoms, compile);
     // console.log(names.length);

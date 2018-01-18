@@ -2,13 +2,13 @@ var apiKey = require('./.env').apiKey;
 
 export function findDoctor(symptoms, compile){
 
-  class doctor {
-    constructor(name, address, phone, availability)
-      this.name = name;
-      this.address = address;
-      this.phone = phone;
-      this.availability = availability;
-  }
+  // class doctor {
+  //   constructor(name, address, phone, availability)
+  //     this.name = name;
+  //     this.address = address;
+  //     this.phone = phone;
+  //     this.availability = availability;
+  // }
 
   const xhr = $.get(`https://api.betterdoctor.com/2016-03-01/doctors?query=${symptoms}&skip=0&limit=10&user_key=${apiKey}`);
 
@@ -21,7 +21,6 @@ export function findDoctor(symptoms, compile){
     const availabilities = [];
     const info = responses.data;
 
-
     info.forEach(function(info){
       names.push(info.profile.first_name + " " + info.profile.last_name);
       addresses.push(info.practices[0].visit_address.street + " " + info.practices[0].visit_address.city + " " + info.practices[0].visit_address.state + " " + info.practices[0].visit_address.zip);
@@ -29,6 +28,8 @@ export function findDoctor(symptoms, compile){
       // websites.push(info.practices[0].website);
       availabilities.push(info.practices[0].accepts_new_patients);
     });
+
+    compile(names, addresses, phoneNumbers, websites, availabilities);
 
     // console.log(names);
     // console.log(addresses);
