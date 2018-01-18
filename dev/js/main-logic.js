@@ -21,7 +21,6 @@ export function findDoctor(symptoms, compile){
     const availabilities = [];
     const info = responses.data;
 
-// console.log(responses);
 
     info.forEach(function(info){
       names.push(info.profile.first_name + " " + info.profile.last_name);
@@ -30,8 +29,6 @@ export function findDoctor(symptoms, compile){
       // websites.push(info.practices[0].website);
       availabilities.push(info.practices[0].accepts_new_patients);
     });
-
-
 
     // console.log(names);
     // console.log(addresses);
@@ -43,7 +40,7 @@ export function findDoctor(symptoms, compile){
   });
 
   xhr.fail(function(){
-    console.log("FAILURE FAILURE")
+    alert("Failed.")
   });
 
   // return with doc info:

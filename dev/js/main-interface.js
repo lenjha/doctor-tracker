@@ -18,7 +18,8 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
       <p>${phoneNumber}</p>
       <!--<p>${website}</p>-->
       <p>${availability}</p>
-    </div>`
+    </div>
+    <hr>`
 
     $("#results").append(template);
   }
@@ -31,7 +32,7 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
 
     findDoctor(symptoms, compile);
     // console.log(names.length);
-    compile();
+    // compile();
     // compile(names, addresses, phoneNumbers, websites, availabilities);
   });
 });
