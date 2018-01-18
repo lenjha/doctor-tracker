@@ -4,10 +4,8 @@ export function findDoctor(symptoms, compile){
 
   const xhr = $.get(`https://api.betterdoctor.com/2016-03-01/doctors?query=${symptoms}&skip=0&limit=10&user_key=${apiKey}`);
 
-
 // once you have api link, pull...
   xhr.done(function(responses){
-
     const names = [];
     const addresses = [];
     const phoneNumbers = [];
@@ -26,11 +24,13 @@ console.log(responses);
       availabilities.push(info.practices[0].accepts_new_patients);
     });
 
-    console.log(names);
-    console.log(addresses);
-    console.log(phoneNumbers);
-    // console.log(websites);
-    console.log(availabilities);
+    // console.log(names);
+    // console.log(addresses);
+    // console.log(phoneNumbers);
+    // // console.log(websites);
+    // console.log(availabilities);
+    console.log(names.length);
+    
   });
 
   xhr.fail(function(){
