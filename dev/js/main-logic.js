@@ -28,9 +28,6 @@ export function findDoctor(symptoms, docName, compile){
       } else {
         availabilities.push("Full.")
       }
-      // availabilities.push(info.practices[0].accepts_new_patients);
-
-      // if they do not have a piece of data, skip
 
       console.log(responses);
     });
