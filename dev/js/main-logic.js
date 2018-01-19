@@ -34,8 +34,8 @@ export function findDoctor(symptoms, docName, compile){
 
   });
 
-  xhr.fail(function(){
-    console.log(docName);
+  xhr.fail(function(response){
+    console.log(response);
   });
 
   // return with doc info:
