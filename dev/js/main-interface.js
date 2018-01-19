@@ -13,11 +13,11 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
     let website = websites[i];
     let availability = availabilities[i];
     let template = `<div class="item">
-      <h3>${name}</h3>
-      <p>${address}</p>
-      <p>${phoneNumber}</p>
+      <h3>Dr. ${name}</h3>
+      <p>Address: ${address}</p>
+      <p>Phone: ${phoneNumber}</p>
       <!--<p>${website}</p>-->
-      <p>${availability}</p>
+      <p>Availability: ${availability}</p>
     </div>
     <hr>`
 
@@ -29,8 +29,9 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
   $("#submit-form").click(function(){
     event.preventDefault();
     const symptoms = $("#symptoms").val();
+    const docName = $("#doctor-name").val();
 
-    findDoctor(symptoms, compile);
+    findDoctor(symptoms, docName, compile);
     // console.log(names.length);
     // compile();
     // compile(names, addresses, phoneNumbers, websites, availabilities);
