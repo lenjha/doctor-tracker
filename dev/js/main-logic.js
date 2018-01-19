@@ -23,7 +23,12 @@ export function findDoctor(symptoms, docName, compile){
       } else {
         websites.push("N/A");
       }
-      availabilities.push(info.practices[0].accepts_new_patients);
+      if (info.practices[0].accepts_new_patients === true) {
+        availabilities.push("Available!")
+      } else {
+        availabilities.push("Full.")
+      }
+      // availabilities.push(info.practices[0].accepts_new_patients);
 
       // if they do not have a piece of data, skip
 

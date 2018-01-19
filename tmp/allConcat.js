@@ -16,7 +16,7 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
       <h3>Dr. ${name}</h3>
       <p>Address: ${address}</p>
       <p>Phone: ${phoneNumber}</p>
-      <!--<p>${website}</p>-->
+      <p>Website: ${website}</p>
       <p>Availability: ${availability}</p>
     </div>
     <hr>`
@@ -28,6 +28,7 @@ function compile(names, addresses, phoneNumbers, websites, availabilities){
 
   $("#submit-form").click(function(){
     event.preventDefault();
+    $("#results").empty();
     const symptoms = $("#symptoms").val();
     const docName = $("#doctor-name").val();
 
